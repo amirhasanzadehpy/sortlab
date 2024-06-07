@@ -1,5 +1,5 @@
 export class CharacterCollection {
-    private value: number;
+    private value: string;
     constructor(public data: string) {
     }
 
@@ -8,14 +8,29 @@ export class CharacterCollection {
     }
 
     currentValue(index: number) {
-        this.value = index
+        this.value = this.data[index]
     }
 
-    get current(): number {
+    get current(): string {
         return this.value
     }
 
-    compare(leftIndex: number, rightIndex: number): boolean {
+    changeValue(leftIndex: number, rightIndex: number, flag: number = 0): void {
+        const characters = this.data.split("")
+
+        if (flag == 1) {
+            characters[leftIndex] = this.value
+        } else if (flag == 0) {
+            characters[leftIndex] = characters[rightIndex];
+        }
+
+        this.data = characters.join("")
+    }
+
+    compare(leftIndex: number, rightIndex: number, flag: number = 0): boolean {
+        if (flag === 1) {
+            return (this.data[leftIndex].toLowerCase() > this.value.toLowerCase())
+        }
         return (this.data[leftIndex].toLowerCase() > this.data[rightIndex].toLowerCase())
     }
 

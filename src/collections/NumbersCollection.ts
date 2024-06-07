@@ -1,6 +1,6 @@
 
 export class NumbersCollection {
-    private currentIndex: number;
+    private value: number;
 
     constructor(public data: number[]) {
     }
@@ -15,15 +15,27 @@ export class NumbersCollection {
         this.data[rightIndex] = leftHand
     }
 
-    compare(leftIndex: number, rightIndex: number): boolean {
+    compare(leftIndex: number, rightIndex: number, flag: number = 0): boolean {
+        if (flag === 1) {
+            return this.data[leftIndex] > this.current
+        }
+
         return this.data[leftIndex] > this.data[rightIndex]
     }
 
+    changeValue(leftIndex: number, rightIndex: number, flag: number = 0): void {
+        if (flag === 1) {
+            this.data[leftIndex] = this.current
+            return
+        }
+        this.data[leftIndex] = this.data[rightIndex];
+    }
+
     currentValue(index: number) {
-        this.currentIndex = index
+        this.value = this.data[index]
     }
 
     get current(): number {
-        return this.currentIndex
+        return this.value
     }
 }

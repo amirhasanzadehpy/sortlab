@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start:run": "nodemon ./build/index.js",
+        "start:run": "nodemon ./build/test.js",
         "start:watch": "tsc -w",
         "start": "concurrently npm:start:*"
     },
