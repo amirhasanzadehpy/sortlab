@@ -6,7 +6,7 @@ export class Sorter extends base {
         super(data)
     }
 
-    public bubbleSort(): void {
+    bubbleSort(): any {
         const { length } = this.collection;
 
         for (let i = 0; i < length; i++) {
@@ -16,10 +16,14 @@ export class Sorter extends base {
                 }
             }
         }
+
+
+        return this.collection.data
+
     }
 
 
-    public selectionSort(): void {
+    selectionSort(): any {
         const { length } = this.collection;
 
         for (let i = 0; i < length; i++) {
@@ -34,10 +38,12 @@ export class Sorter extends base {
             }
 
         }
+
+        return this.collection.data
     }
 
 
-    public insertionSort(): void {
+    insertionSort(): any {
         const { length } = this.collection;
         for (let i = 1; i < length; i++) {
             this.collection.currentValue(i)
@@ -49,5 +55,7 @@ export class Sorter extends base {
             this.collection.changeValue(j + 1, 0, 1)
 
         }
+
+        return this.collection.data
     }
 }
