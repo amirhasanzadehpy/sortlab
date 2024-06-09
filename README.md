@@ -11,6 +11,45 @@
 - **Multiple sorting algorithms**: Insertion Sort, Selection Sort, Bubble Sort, etc.
 - **Easy to use**: Simple API for integrating sorting functionality into your projects.
 
+
+## Installation
+
+You can install `sortlab` using npm:
+
+```bash
+npm install sortlab
+```
+
+## Usage
+
+Here are some examples of how to use `sortlab` in your projects:
+
+### Sorting a Number Array
+
+```javascript
+const { Sorter } = require('sortlab');
+
+const numberArray = [34, 7, 23, 32, 5, 62];
+
+const sorterInstance = new Sorter(numberArray);
+
+const sortedArray = sorterInstance.bubbleSort();
+
+console.log(`Bubble Sort: ${sortedArray}`);
+```
+
+### Sorting a String
+
+```javascript
+const { Sorter } = require('sortlab');
+
+const stringData = "sortexample";
+const sorterInstance = new Sorter(stringData);
+
+const sortedString = sorterInstance.selectionSort();
+console.log(`Quick Sort: ${sortedString}`);
+```
+
 ## Supported Sorting Algorithms
 
 - **Insertion Sort**
