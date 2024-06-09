@@ -8,16 +8,16 @@ importers:
 
   .:
     dependencies:
+    devDependencies:
+      tsup:
+        specifier: ^8.1.0
+        version: 8.1.0(typescript@5.4.5)
       '@types/node':
         specifier: ^20.14.2
         version: 20.14.2
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
-    devDependencies:
-      tsup:
-        specifier: ^8.1.0
-        version: 8.1.0(typescript@5.4.5)
 
 packages:
 
