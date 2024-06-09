@@ -1,6 +1,6 @@
-import { base } from ".";
+import { Base } from ".";
 
-export class Sorter extends base {
+export class Sorter extends Base {
 
     constructor(protected data: number[] | string) {
         super(data)

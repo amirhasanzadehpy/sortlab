@@ -3,12 +3,19 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start:run": "nodemon ./build/test.js",
-        "start:watch": "tsc -w",
-        "start": "concurrently npm:start:*"
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "lint": "tsc",
+        "ci": "pnpm run lint && pnpm run build"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "description": ""
+    "description": "",
+    "dependencies": {
+        "@types/node": "^20.14.2",
+        "typescript": "^5.4.5"
+    },
+    "devDependencies": {
+        "tsup": "^8.1.0"
+    }
 }
