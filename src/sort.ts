@@ -1,10 +1,10 @@
 
 import { CharacterCollection } from "./collections/CharacterCollection";
 import { NumbersCollection } from "./collections/NumbersCollection";
-import { RawDataType } from "./types";
+import { RawDataType, CollectionType } from "./types";
 
 export class Sorter {
-    private collection: NumbersCollection | CharacterCollection;
+    private collection: CollectionType;
 
     constructor(data: RawDataType) {
         if (Array.isArray(data)) {
@@ -14,7 +14,7 @@ export class Sorter {
         }
     }
 
-    bubbleSort(): any {
+    bubbleSort(): RawDataType {
         const { length } = this.collection;
 
         for (let i = 0; i < length; i++) {
@@ -31,7 +31,7 @@ export class Sorter {
     }
 
 
-    selectionSort(): any {
+    selectionSort(): RawDataType {
         const { length } = this.collection;
 
         for (let i = 0; i < length; i++) {
@@ -51,7 +51,7 @@ export class Sorter {
     }
 
 
-    insertionSort(): any {
+    insertionSort(): RawDataType {
         const { length } = this.collection;
         for (let i = 1; i < length; i++) {
             this.collection.currentValue(i)
@@ -65,5 +65,28 @@ export class Sorter {
         }
 
         return this.collection.data
+    }
+
+    quickSort(dataCollection: CollectionType = this.collection, low: number = 0, high: number = this.collection.length - 1): RawDataType {
+        if (low < high) {
+            const pivotIndex = this.partition(this.collection, low, high);
+            this.quickSort(dataCollection, low, pivotIndex - 1);
+            this.quickSort(dataCollection, pivotIndex + 1, high);
+        }
+        return this.collection.data;
+    }
+    
+    private partition(arr: CollectionType, low: number, high: number): number {
+        this.collection.currentValue(high)
+        let i = low - 1;
+    
+        for (let j = low; j < high; j++) {
+            if (!this.collection.compare(j,0,1)) {
+                i++;
+                this.collection.swap(i,j)
+            }
+        }
+        this.collection.swap(i+1, high)
+        return i + 1;
     }
 }

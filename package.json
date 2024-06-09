@@ -1,18 +1,38 @@
 {
     "name": "sortlab",
-    "version": "0.0.2",
+    "description": "sortlab is a versatile sorting package that supports various data structures, such as number arrays and strings, and provides multiple popular sorting algorithms. 💪",
+    "version": "0.0.41",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amirhasanzadehpy/sortlab.git"
+      },
     "scripts": {
         "build": "tsup src/index.ts --format cjs,esm --dts",
         "lint": "tsc",
         "ci": "pnpm run lint && pnpm run build"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
+    "keywords": [
+        "sortlab",
+        "sort",
+        "algorithms",
+        "sortAlgorithm",
+        "javascript",
+        "typescript",
+        "bubbleSort",
+        "selectionSort",
+        "insertionSort",
+        "quickSort",
+        "sorting"
+    ],
+    "author": {
+        "name": "Amir Mohammad Hasanzadeh",
+        "email": "amirhasanzadehpy@gmail.com"
+    },
+    "homepage": "https://github.com/amirhasanzadehpy/sortlab#readme",
+    "license": "MIT",
     "devDependencies": {
         "tsup": "^8.1.0",
         "@types/node": "^20.14.2",

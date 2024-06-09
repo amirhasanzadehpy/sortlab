@@ -1,6 +1,3 @@
-![ts](https://badgen.net/badge/Built%20With/TypeScript/blue)
-
-
 # Sortlab
 
 `sortlab` is a versatile sorting package that supports various data structures, such as number arrays and strings, and provides multiple popular sorting algorithms.
@@ -55,6 +52,7 @@ console.log(`Quick Sort: ${sortedString}`);
 - **Insertion Sort**
 - **Selection Sort**
 - **Bubble Sort**
+- **Quick Sort**
 - More algorithms coming soon...
 
 ## Contributing
