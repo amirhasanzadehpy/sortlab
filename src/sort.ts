@@ -1,9 +1,17 @@
-import { Base } from ".";
 
-export class Sorter extends Base {
+import { CharacterCollection } from "./collections/CharacterCollection";
+import { NumbersCollection } from "./collections/NumbersCollection";
+import { RawDataType } from "./types";
 
-    constructor(protected data: number[] | string) {
-        super(data)
+export class Sorter {
+    private collection: NumbersCollection | CharacterCollection;
+
+    constructor(data: RawDataType) {
+        if (Array.isArray(data)) {
+            this.collection = new NumbersCollection(data)
+        } else if (typeof data === "string") {
+            this.collection = new CharacterCollection(data)
+        }
     }
 
     bubbleSort(): any {
